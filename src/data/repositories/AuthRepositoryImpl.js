@@ -1,0 +1,14 @@
+export class AuthRepositoryImpl {
+  constructor(api) {
+    this.api = api;
+  }
+
+  async login(username, password) {
+    const res = await this.api.post('/login', {
+      username,
+      password
+    });
+
+    return res.data;
+  }
+}
