@@ -1,3 +1,4 @@
+/*
 export class AuthRepositoryImpl {
   constructor(api) {
     this.api = api;
@@ -10,5 +11,20 @@ export class AuthRepositoryImpl {
     });
 
     return res.data;
+  }
+}
+*/
+
+import apiClient from "../../core/api/apiclient";
+
+export class AuthRepositoryImpl {
+  async login(username, password) {
+
+    const response = await apiClient.post("/login", {
+      username: username,
+      password: password
+    });
+
+    return response.data;
   }
 }
