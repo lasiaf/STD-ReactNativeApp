@@ -1,3 +1,15 @@
+
+import React from 'react';
+import { View, Text } from 'react-native';
+
+export default function LoginScreen() {
+  return (
+    <View>
+      <Text>Login Screen</Text>
+    </View>
+  );
+}
+
 /*
 import React from 'react';
 import { View, Text } from 'react-native';
@@ -10,6 +22,7 @@ export default function LoginScreen() {
   );
 }
 */
+/*
 import React, { useState } from "react";
 import { View, Text, TextInput, Button, StyleSheet } from "react-native";
 
@@ -87,3 +100,60 @@ const styles = StyleSheet.create({
   }
 
 });
+*/
+/*
+import React, { useState } from "react";
+import { View, TextInput, Button, Text } from "react-native";
+
+//import LoginUser from "../../../domain/usecases/auth/LoginUser";
+//import AuthRepositoryImpl from "../../../data/repositories/AuthRepositoryImpl";
+
+export default function LoginScreen({ navigation }) {
+
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  //const authRepository = new AuthRepositoryImpl();
+  //const loginUser = new LoginUser(authRepository);
+
+  const handleLogin = async () => {
+    try {
+        /*
+      const user = await loginUser.execute(username, password);
+
+      navigation.navigate("DataTransactions", {
+        user: user
+      });
+
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+
+  return (
+    <View style={{ padding: 20 }}>
+
+      <Text>Login</Text>
+
+      <TextInput
+        placeholder="Username"
+        value={username}
+        onChangeText={setUsername}
+      />
+
+      <TextInput
+        placeholder="Password"
+        secureTextEntry
+        value={password}
+        onChangeText={setPassword}
+      />
+
+      <Button title="Login" onPress={handleLogin} />
+
+      {error ? <Text>{error}</Text> : null}
+
+    </View>
+  );
+}
+*/
