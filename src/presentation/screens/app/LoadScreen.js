@@ -1,10 +1,10 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-export default function DataTransactionsScreen() {
+export default function LoadScreen() {
   return (
     <View>
-      <Text>Transactions Screen</Text>
+      <Text>Load Screen</Text>
     </View>
   );
 }

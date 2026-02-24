@@ -9,4 +9,6 @@ export { default as UpdateScreen } from './activity/DataUpdateScreen';
 export { default as ReadScreen } from './activity/DataViewScreen';
 
 export { default as SplashScreen } from './app/SplashScreen';
+export { default as CheckScreen } from './app/CheckScreen';
+export { default as LoadScreen } from './app/LoadScreen';
 
