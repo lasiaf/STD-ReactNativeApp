@@ -1,5 +1,26 @@
 
 import React from 'react';
+import { View, Button } from 'react-native';
+
+export default function LoginScreen({ navigation }) {
+
+  const handleLogin = () => {
+    // proses login berhasil
+    navigation.replace("MainTabs");
+  };
+
+  return (
+    <View>
+      <Button
+        title="Login"
+        onPress={handleLogin}
+      />
+    </View>
+  );
+}
+
+/*
+import React from 'react';
 import { View, Text } from 'react-native';
 
 export default function LoginScreen() {
@@ -9,6 +30,7 @@ export default function LoginScreen() {
     </View>
   );
 }
+*/
 
 /*
 import React from 'react';

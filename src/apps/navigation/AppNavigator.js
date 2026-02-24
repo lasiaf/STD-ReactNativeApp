@@ -1,3 +1,17 @@
+/*
+import { NavigationContainer } from '@react-navigation/native';
+import NavBottom from './NavBottom';
+
+export default function AppNavigator() {
+  return (
+    <NavigationContainer>
+      <NavBottom />
+    </NavigationContainer>
+  );
+}
+*/
+
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import {
@@ -13,7 +27,7 @@ import {
   LoadScreen,
   MenuScreen
 } from '@presentation/screens';
-
+import NavBottom from '@apps/navigation/NavBottom';
 const Stack = createNativeStackNavigator();
 
 export default function AppNavigator() {
@@ -35,6 +49,12 @@ export default function AppNavigator() {
         <Stack.Screen name="Menu" component={MenuScreen} />
         <Stack.Screen name="Load" component={LoadScreen} />
         <Stack.Screen name="Splash" component={SplashScreen} />
+
+        <Stack.Screen 
+          name="MainTabs"
+          component={NavBottom}
+          options={{ headerShown: false }}
+        /> 
 
       </Stack.Navigator>
     </NavigationContainer>
