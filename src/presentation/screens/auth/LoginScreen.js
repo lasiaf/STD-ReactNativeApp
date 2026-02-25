@@ -2,6 +2,7 @@ import React,  {useState} from 'react';
 import { View, Button, TextInput, Alert } from 'react-native';
 import LoginUser from '@domain/usecases/auth/LoginUser';
 import AuthRepositoryImpl from '@data/repositories/AuthRepositoryImpl';
+//import { saveToken } from "@data/storage/AuthStorage";
 
 export default function LoginScreen({ navigation }) {
   const [username, setUsername] = useState('');
@@ -21,8 +22,14 @@ export default function LoginScreen({ navigation }) {
       password: password,
     };
 
+    
     const response = await loginProcess.execute(data);
     Alert.alert('Informasi', JSON.stringify(response));
+
+    const token = "123456789TOKEN";
+    //await saveToken(token);
+    repository.loginAcc(token);
+
   };
 
   return (
