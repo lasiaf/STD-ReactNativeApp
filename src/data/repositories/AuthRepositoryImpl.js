@@ -1,3 +1,30 @@
+import { loginUser } from '@data/datasources/ApiDatasource';
+
+
+export default class AuthRepositoryImpl {
+
+  async login(data) {
+    
+    return await loginUser(data);
+  }
+
+}
+
+/*
+import User from "../../domain/entities/user";
+
+export default class AuthRepositoryImpl {
+  async login(username, password) {
+
+    // simulasi login
+    if (username === "admin" && password === "123") {
+      return new User(username, "token123");
+    }
+
+    throw new Error("Username atau password salah");
+  }
+}
+  */
 /*
 export class AuthRepositoryImpl {
   constructor(api) {
@@ -29,17 +56,3 @@ export class AuthRepositoryImpl {
   }
 }
 */
-
-import User from "../../domain/entities/user";
-
-export default class AuthRepositoryImpl {
-  async login(username, password) {
-
-    // simulasi login
-    if (username === "admin" && password === "123") {
-      return new User(username, "token123");
-    }
-
-    throw new Error("Username atau password salah");
-  }
-}

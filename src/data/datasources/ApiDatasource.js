@@ -28,8 +28,9 @@ export const createDataApi = async data => {
 };
 
 export const loginUser = async dataJSON => {
+  let response  = "";
   try {
-    const response = await axios.post(URL_LOGIN, dataJSON, {
+    response = await axios.post(URL_LOGIN, dataJSON, {
       headers: {
         'Content-Type': 'application/json',
         [HEADER_KEY]: TOKEN_VALUE,
@@ -37,7 +38,7 @@ export const loginUser = async dataJSON => {
     });
 
     //console.log('Response:', response.data);
-    Alert.alert('Informasi', JSON.stringify(response));
+    
   } catch (error) {
     if (error.response) {
       console.error('Error Response:', error.response.data);
@@ -45,5 +46,9 @@ export const loginUser = async dataJSON => {
     } else {
       console.error('Error:', error.message);
     }
+    response  = error;
+    
   }
+
+  return response;
 };
