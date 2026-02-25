@@ -4,9 +4,10 @@ import { View, Text, Alert, Button } from 'react-native';
 import AuthRepositoryImpl from '@data/repositories/AuthRepositoryImpl';
 
 export default function UserScreen() {
+  const repository = new AuthRepositoryImpl();
   const checkLogin = async () => {
 
-    const repository = new AuthRepositoryImpl();
+    
     const token = await repository.getToken();
 
     if (token) {
@@ -20,11 +21,21 @@ export default function UserScreen() {
 
   const resetUser = async () => {
 
-    const repository = new AuthRepositoryImpl();
+    
     await repository.logout();
 
     console.log('User sudah logout');
     Alert.alert('Success', 'User sudah logout ');
+    
+  };
+
+  const loginUser = async () => {
+
+    const token = "123456789TOKEN";
+    await repository.loginAcc(token);
+
+    console.log('User sudah login');
+    Alert.alert('Success', 'User sudah login ');
     
   };
   
@@ -37,6 +48,7 @@ export default function UserScreen() {
       <Text>Home Screen</Text>
       <Button title="Cek Token" onPress={checkLogin} />
       <Button title="Reset Token" onPress={resetUser} />
+      <Button title="Create Token" onPress={loginUser} />
     </View>
   );
 }
